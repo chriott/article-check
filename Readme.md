@@ -6,22 +6,6 @@
 - Detects wrong usage of indefinite articles (for example: "I saw an dog.” → "I saw a dog.”).
 - Detects double usage of articles in a sentence (for example: "I read the the book” → "I read the book”).
 
-## Changelog v1.1
-
-- Refactored the main function **ArticleCheck** into 3 sub functions:
-  - **SentenceTagger**: Given an input string, returns a corresponding annotated tuple (token list, POS list).
-  - **MissingArticleFinder**: Finds missing articles and returns a list of tokens that represents the input sentence, including inserted articles.
-  - **MissingArticleSuggestion**: Given a list of tokens, returns a possible consecutive string without unwanted whitespace.
-- Merged *tokenList* and *tokenList_* to reduce duplication and instead introduced regex to determine the correct token "the/a/an".
-- Rewrote single letter case handling with regex to reduce duplication.
-- Rewrote wrong usage of articles with regex.
-- Dropped the *possibleSuggestion* variable to reduce duplication.
-- Trimmed unnecessary conditions and reduced lines of the main function *findMissingArticle*.
-- Support of all upper case sentences, quotation marks and more contractions (for example "I'll", "they're", "they've", "doesn't").
-- Expanded the list of uncountable nouns.
-- Reworked the tests to provide better coverage and less duplication.
-- Version history with git.
-
 ## About
 
 This is a Java program that searches for missing articles in a given English sentence. If a missing article is detected, the "Missing article checker" provides a suggestion for an article insertion. 
